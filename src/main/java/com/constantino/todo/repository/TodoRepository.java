@@ -14,4 +14,7 @@ public interface TodoRepository extends JpaRepository<Todo, Long> {
 	@Query("SELECT todo FROM Todo todo WHERE todo.finalizado = false ORDER BY todo.dataParaFinalizar ")
 	List<Todo> findAllOpen();
 
+	@Query("SELECT todo FROM Todo todo WHERE todo.finalizado = true ORDER BY todo.dataParaFinalizar ")
+	List<Todo> findAllClose();
+
 }
